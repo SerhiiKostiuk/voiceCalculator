@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "VoiceRecognizer.h"
 
-@interface ViewController ()
+@interface ViewController () <VoiceRecognizerAnswerDelegate>
+
+@property (nonatomic, strong) VoiceRecognizer *recognizer;
+@property (weak, nonatomic) IBOutlet UIButton *startRecordButton;
+@property (weak, nonatomic) IBOutlet UITextView *resultTextView;
 
 @end
 
@@ -16,13 +21,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.startRecordButton.enabled = NO;
+    
+    self.recognizer = [[VoiceRecognizer alloc] init];
+    self.recognizer.delegate = self;
+    __weak typeof(self)weakSelf = self;
+    
+    [self.recognizer setupVoiceRecognizer:^(BOOL isAutorized) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            __strong typeof(self) strongSelf = weakSelf;
+            strongSelf.startRecordButton.enabled = isAutorized;
+        });
+    }];
 }
 
+- (IBAction)startRecordButtonTapped:(id)sender {
+    if (self.recognizer.audioEngine.isRunning == YES) {
+        [self.recognizer stopRecord];
+        [self.startRecordButton setTitle:@"Start Recording" forState:UIControlStateNormal];
+    } else {
+        [self.recognizer startRecording];
+        [self.startRecordButton setTitle:@"Stop Record" forState:UIControlStateNormal];
+    }
+}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)voiceRecognizerAnswer:(NSString *)answer {
+    self.resultTextView.text = answer.capitalizedString;
+}
+
+- (void)microphoneAvailabilityDidChange:(BOOL)avaliable {
+    self.startRecordButton.enabled = avaliable;
 }
 
 

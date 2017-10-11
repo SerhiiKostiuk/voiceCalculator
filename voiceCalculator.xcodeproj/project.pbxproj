@@ -13,6 +13,8 @@
 		CD6666EC1F8D3D09006851C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6666EB1F8D3D09006851C1 /* Assets.xcassets */; };
 		CD6666EF1F8D3D09006851C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD6666ED1F8D3D09006851C1 /* LaunchScreen.storyboard */; };
 		CD6666F21F8D3D09006851C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6666F11F8D3D09006851C1 /* main.m */; };
+		CD6666FA1F8D3E61006851C1 /* VoiceRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6666F91F8D3E61006851C1 /* VoiceRecognizer.m */; };
+		CD6666FD1F8D62A2006851C1 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6666FC1F8D62A2006851C1 /* Converter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		CD6666EE1F8D3D09006851C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD6666F01F8D3D09006851C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD6666F11F8D3D09006851C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CD6666F81F8D3E61006851C1 /* VoiceRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceRecognizer.h; sourceTree = "<group>"; };
+		CD6666F91F8D3E61006851C1 /* VoiceRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceRecognizer.m; sourceTree = "<group>"; };
+		CD6666FB1F8D62A2006851C1 /* Converter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
+		CD6666FC1F8D62A2006851C1 /* Converter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				CD6666ED1F8D3D09006851C1 /* LaunchScreen.storyboard */,
 				CD6666F01F8D3D09006851C1 /* Info.plist */,
 				CD6666F11F8D3D09006851C1 /* main.m */,
+				CD6666F81F8D3E61006851C1 /* VoiceRecognizer.h */,
+				CD6666F91F8D3E61006851C1 /* VoiceRecognizer.m */,
+				CD6666FB1F8D62A2006851C1 /* Converter.h */,
+				CD6666FC1F8D62A2006851C1 /* Converter.m */,
 			);
 			path = voiceCalculator;
 			sourceTree = "<group>";
@@ -142,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6666FD1F8D62A2006851C1 /* Converter.m in Sources */,
 				CD6666E71F8D3D09006851C1 /* ViewController.m in Sources */,
 				CD6666F21F8D3D09006851C1 /* main.m in Sources */,
+				CD6666FA1F8D3E61006851C1 /* VoiceRecognizer.m in Sources */,
 				CD6666E41F8D3D09006851C1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
