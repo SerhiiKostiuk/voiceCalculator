@@ -46,7 +46,9 @@
 }
 
 - (void)voiceRecognizerAnswer:(NSString *)answer {
+    dispatch_async(dispatch_get_main_queue(), ^{
     self.resultTextView.text = answer.capitalizedString;
+    });
 }
 
 - (void)microphoneAvailabilityDidChange:(BOOL)avaliable {
